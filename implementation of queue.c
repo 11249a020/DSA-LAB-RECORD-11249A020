@@ -13,7 +13,7 @@ int isEmpty(Queue *q) {
 return q->front == -1;
 }
 int isFull(Queue *q) {
-return (q->;rear + 1) % MAX == q->;front;
+return (q->rear + 1) % MAX == q->front;
 }
 void enqueue(Queue *q, int value) {
 if (isFull(q)) {
@@ -69,5 +69,6 @@ printf("Queue is not empty\n");
 }
 return 0;
 }
+
 
 
