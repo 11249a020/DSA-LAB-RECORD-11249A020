@@ -6,51 +6,51 @@ int front;
 int rear;
 } Queue;
 void init(Queue *q) {
-q-&gt;front = -1;
-q-&gt;rear = -1;
+q->front = -1;
+q->rear = -1;
 }
 int isEmpty(Queue *q) {
-return q-&gt;front == -1;
+return q->front == -1;
 }
 int isFull(Queue *q) {
-return (q-&gt;rear + 1) % MAX == q-&gt;front;
+return (q->;rear + 1) % MAX == q->;front;
 }
 void enqueue(Queue *q, int value) {
 if (isFull(q)) {
-printf(&quot;Queue Overflow! Cannot enqueue %d\n&quot;, value);
+printf("Queue Overflow! Cannot enqueue %d\n", value);
 return;
 }
 
 if (isEmpty(q)) {
-q-&gt;front = 0;
+q->front = 0;
 }
-q-&gt;rear = (q-&gt;rear + 1) % MAX;
-q-&gt;arr[q-&gt;rear] = value;
-printf(&quot;Enqueued %d\n&quot;, value);
+q->rear = (q->rear + 1) % MAX;
+q->arr[q->rear] = value;
+printf("Enqueued %d\n", value);
 }
 
 int dequeue(Queue *q) {
 if (isEmpty(q)) {
-printf(&quot;Queue Underflow! Cannot dequeue\n&quot;);
+printf("Queue Underflow! Cannot dequeue\n");
 return -1; // Indicate error
 }
-int value = q-&gt;arr[q-&gt;front];
-if (q-&gt;front == q-&gt;rear) {
+int value = q->arr[q->front];
+if (q->front == q->rear) {
 // Queue has only one element, reset after dequeue
-q-&gt;front = -1;
-q-&gt;rear = -1;
+q->front = -1;
+q->rear = -1;
 } else {
-q-&gt;front = (q-&gt;front + 1) % MAX;
+q->front = (q->front + 1) % MAX;
 }
 return value;
 }
 
 int peek(Queue *q) {
 if (isEmpty(q)) {
-printf(&quot;Queue is empty\n&quot;);
+printf("Queue is empty\n");
 return -1;
 }
-return q-&gt;arr[q-&gt;front];
+return q->arr[q->front];
 }
 
 int main() {
@@ -59,14 +59,15 @@ init(&amp;q);
 enqueue(&amp;q, 10);
 enqueue(&amp;q, 20);
 enqueue(&amp;q, 30);
-printf(&quot;Front element is %d\n&quot;, peek(&amp;q));
-printf(&quot;Dequeued element is %d\n&quot;, dequeue(&amp;q));
-printf(&quot;Dequeued element is %d\n&quot;, dequeue(&amp;q));
+printf("Front element is %d\n", peek(&amp;q));
+printf("Dequeued element is %d\n";, dequeue(&amp;q));
+printf("Dequeued element is %d\n", dequeue(&amp;q));
 if (isEmpty(&amp;q)) {
-printf(&quot;Queue is empty now\n&quot;);
+printf("Queue is empty now\n");
 } else {
-printf(&quot;Queue is not empty\n&quot;);
+printf("Queue is not empty\n");
 }
 return 0;
 }
+
 
