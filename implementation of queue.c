@@ -56,12 +56,12 @@ return q->arr[q->front];
 int main() {
 Queue q;
 init(&amp;q);
-enqueue(&amp;q, 10);
-enqueue(&amp;q, 20);
-enqueue(&amp;q, 30);
-printf("Front element is %d\n", peek(&amp;q));
-printf("Dequeued element is %d\n";, dequeue(&amp;q));
-printf("Dequeued element is %d\n", dequeue(&amp;q));
+enqueue(&q, 10);
+enqueue(&q, 20);
+enqueue(&q, 30);
+printf("Front element is %d\n", peek(&q));
+printf("Dequeued element is %d\n";, dequeue(&q));
+printf("Dequeued element is %d\n", dequeue(&q));
 if (isEmpty(&amp;q)) {
 printf("Queue is empty now\n");
 } else {
@@ -69,6 +69,7 @@ printf("Queue is not empty\n");
 }
 return 0;
 }
+
 
 
 
